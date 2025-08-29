@@ -1,7 +1,7 @@
 import axios from 'axios'
 import env from '#start/env'
 
-export default class McService {
+export default class CmcService {
   static readonly REQUEST_TIMEOUT = 10000
   static readonly MEME_CATEGORY_ID = '6051a82566fc1b42617d6dc6'
 
@@ -22,7 +22,7 @@ export default class McService {
           Accept: 'application/json',
           'X-CMC_PRO_API_KEY': env.get('MC_API_KEY'),
         },
-        timeout: McService.REQUEST_TIMEOUT,
+        timeout: CmcService.REQUEST_TIMEOUT,
       })
       return res.data
     } catch (err: any) {

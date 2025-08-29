@@ -1,5 +1,5 @@
 import Coin from '#models/coin'
-import McService from '#services/mc_service'
+import CmcService from '#services/cmc_service'
 import { BaseCommand } from '@adonisjs/core/ace'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
 import { DateTime } from 'luxon'
@@ -15,12 +15,12 @@ export default class UpdateCoins extends BaseCommand {
   }
 
   async run() {
-    const mc = new McService()
+    const mc = new CmcService()
     let start = 1
     let limit = 1000
     let max = 0
     do {
-      const data = await mc.fetchCoinsInCategory({ categoryId: McService.MEME_CATEGORY_ID, start: start, limit: limit })
+      const data = await mc.fetchCoinsInCategory({ categoryId: CmcService.MEME_CATEGORY_ID, start: start, limit: limit })
       max = data.num_tokens
       for (const coin of data.coins) {
         await Coin.updateOrCreate(
