@@ -1,0 +1,29 @@
+{
+  "name": "memesafari",
+  "version": "0.0.0",
+  "description": "The safari for meme coins",
+  "author": "luong",
+  "license": "ISC",
+  "scripts": {
+    "dev": "pnpm -r --filter './apps/*' dev",
+    "dev:api": "pnpm --filter './apps/api' dev",
+    "build": "pnpm -r --filter './apps/*' build",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "format": "prettier --write . --log-level=warn"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
+  }
+}
